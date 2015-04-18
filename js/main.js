@@ -448,11 +448,25 @@ $("#replay").click(function() {
       showSplash();
    });
 });
-
+var myMonthIndex = 0;
+var myYear = 2005;
 function playerScore()
 {
    score += 1;
-   $("#companyYear").html('<h3 style="margin-top: 56px; font-size: 38px;">Stock price ' + Math.round(100*data[index])/100 + '$ for ' + month[dates[index].getMonth()] + ' ' + dates[index].getFullYear() + ' </h3>');
+
+   $("#companyYear").html('<h3 style="margin-top: 56px; font-size: 38px;">Stock price ' + Math.round(100*data[index])/100 + '$ for ' + month[myMonthIndex] + ' ' + myYear + ' </h3>');
+   console.log(index);
+
+   myMonthIndex++;
+   if(myMonthIndex == 12)
+   {
+      myMonthIndex = 0;
+      myYear ++;
+   }
+   var j = 0;
+   // for(j = 0; j< dates.length; j++){
+   //    console.log(dates[j]);
+   // }
    //play score sound
    soundScore.stop();
    soundScore.play();
@@ -479,18 +493,18 @@ var result;
 function initialiseData(){ 
    index = 0;
    var i = 0;
-   console.log(window.res);
    jsonData = $.parseJSON(window.res);
    console.log(jsonData);
    $.each(jsonData, function(val){
       d.setMonth(d.getMonth() + 1);
-      dates[i] = d;
-      console.log(d);
+      dates.push(new Date().setMonth(d.getMonth).set);
       data[i] = jsonData[val];
-      console.log(data[i]);
       i++;
 
    })
+     for(j = 0; j< dates.length; j++){
+      console.log(j+": "+dates[j]);
+   }
 }
 function updatePipes()
 {
