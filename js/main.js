@@ -76,6 +76,7 @@ function showSplash()
    currentstate = states.SplashScreen;
 
    $("#companyName").html('<h3 style="margin-top: 45px; font-size: 48px;">'+window.company+'</h3>');
+   $("#companyYear").html('');
    
    //set the defaults (again)
    velocity = 0;
@@ -450,7 +451,7 @@ $("#replay").click(function() {
 function playerScore()
 {
    score += 1;
-   $("#companyYear").html('<h3 style="margin-top: 56px; font-size: 38px;">Stock price ' + Math.round(100*data[index]) + '$ for ' + month[dates[index].getMonth()] + ' ' + dates[index].getFullYear() + ' </h3>');
+   $("#companyYear").html('<h3 style="margin-top: 56px; font-size: 38px;">Stock price ' + Math.round(100*data[index])/100 + '$ for ' + month[dates[index].getMonth()] + ' ' + dates[index].getFullYear() + ' </h3>');
    //play score sound
    soundScore.stop();
    soundScore.play();
