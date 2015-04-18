@@ -1,29 +1,15 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+BloomBird is manipulated FlappyBird game which obstacles are generated depending on a stock price of a chosen company.
 
-### What is this repository for? ###
+### What did we use? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* Bloomberg API - to get a stock prices of any company
+* JavaScript, CSS, HTML; - Front-end
+* PHP script - to send request to JSON and get the JSON array
+* LayerShift Server
 
-### How do I get set up? ###
+### Version ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* Beta: 0.1
 
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
