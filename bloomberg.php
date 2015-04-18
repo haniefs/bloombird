@@ -14,10 +14,22 @@ class Bloomberg {
   public function json() {
     $data = json_encode(array('securities' => [$this->company], 
                               'fields' => ['PX_LAST'],
-                              'startDate' => '20120101',
+                              'startDate' => '20050101',
                               'endDate' => '20150105',
                               'periodicitySelection' => 'MONTHLY'));
-    print $this->do_curl($data);
+
+
+    $stockPrice = $this->do_curl($data);
+    $stockPrice = json_decode($stockPrice);
+
+    $result = array();
+    foreach ($stockPrice->data[0]->securityData->fieldData as $v ) 
+    {
+      // array_push($result, array('date' => $v->date, 'value' => $v->PX_LAST));
+      array_push($result, array($v->PX_LAST)[0]);
+    }
+
+    echo json_encode($result);
   }
 
   private function do_curl($data) {
@@ -58,7 +70,7 @@ class Bloomberg {
 
 }
 
-$company = $_POST['company'];
+$company = 'IBM US Equity';
 $b = new Bloomberg($company);
 $b->json();
 ?>
