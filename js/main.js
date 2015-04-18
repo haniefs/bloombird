@@ -70,6 +70,7 @@ function setCookie(cname,cvalue,exdays)
    var expires = "expires="+d.toGMTString();
    document.cookie = cname + "=" + cvalue + "; " + expires;
 }
+int year_counter = 0;
 
 function showSplash()
 {
@@ -77,6 +78,8 @@ function showSplash()
 
    $("#companyName").html('<h3 style="margin-top: 45px; font-size: 48px;">'+window.company+'</h3>');
    $("#companyYear").html('');
+   d = new Date(2004, 12, 01);
+   year_counter = 0;
    
    //set the defaults (again)
    velocity = 0;
@@ -451,7 +454,9 @@ $("#replay").click(function() {
 function playerScore()
 {
    score += 1;
-   $("#companyYear").html('<h3 style="margin-top: 56px; font-size: 38px;">Stock price ' + Math.round(100*data[index])/100 + '$ for ' + month[dates[index].getMonth()] + ' ' + dates[index].getFullYear() + ' </h3>');
+
+   $("#companyYear").html('<h3 style="margin-top: 56px; font-size: 38px;">Stock price ' + Math.round(100*data[year_counter])/100 + '$ for ' + month[dates[year_counter].getMonth()] + ' ' + dates[year_counter].getFullYear() + ' </h3>');
+   year_counter += 2;
    //play score sound
    soundScore.stop();
    soundScore.play();
