@@ -450,14 +450,29 @@ $("#replay").click(function() {
 function playerScore()
 {
    score += 1;
-   $("#companyYear").html('<h3 style="margin-top: 56px; font-size: 38px;">Stock price ' + data[index] + '$ for Jan 2005</h3>');
+   $("#companyYear").html('<h3 style="margin-top: 56px; font-size: 38px;">Stock price ' + Math.round(100*data[index]) + '$ for ' + month[dates[index].getMonth()] + ' ' + dates[index].getFullYear() + ' </h3>');
    //play score sound
    soundScore.stop();
    soundScore.play();
    setBigScore();
 }
 var data = new Array();
+var dates = new Array();
+var month = new Array();
+month[0] = "Jan";
+month[1] = "Feb";
+month[2] = "Mar";
+month[3] = "Apr";
+month[4] = "May";
+month[5] = "Jun";
+month[6] = "Jul";
+month[7] = "Aug";
+month[8] = "Sep";
+month[9] = "Oct";
+month[10] = "Nov";
+month[11] = "Dec";
 var index;
+var d = new Date(2004, 12, 01);
 var result;
 function initialiseData(){ 
    index = 0;
@@ -466,6 +481,9 @@ function initialiseData(){
    jsonData = $.parseJSON(window.res);
    console.log(jsonData);
    $.each(jsonData, function(val){
+      d.setMonth(d.getMonth() + 1);
+      dates[i] = d;
+      console.log(d);
       data[i] = jsonData[val];
       console.log(data[i]);
       i++;
