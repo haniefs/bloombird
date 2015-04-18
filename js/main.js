@@ -473,9 +473,18 @@ function playerScore()
 var data = new Array();
 var index;
 var result;
-function initialiseData(){
-	index = 0;
-	data = [200,150,113, 130,70,68,79,99,115,220,113,130,150,90];
+function initialiseData(){ 
+   index = 0;
+   var i = 0;
+   console.log(window.res);
+   jsonData = $.parseJSON(window.res);
+   console.log(jsonData);
+   $.each(jsonData, function(val){
+      data[i] = jsonData[val];
+      console.log(data[i]);
+      i++;
+
+   })
 }
 function updatePipes()
 {
