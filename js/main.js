@@ -450,6 +450,7 @@ $("#replay").click(function() {
 function playerScore()
 {
    score += 1;
+   $("#companyYear").html('<h3 style="margin-top: 56px; font-size: 38px;">Stock price ' + data[index] + '$ for Jan 2005</h3>');
    //play score sound
    soundScore.stop();
    soundScore.play();
