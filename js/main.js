@@ -220,16 +220,7 @@ function gameloop() {
       }
       else
       {
-      	console.log(boxtop);
-      	console.log(pipetop);
-      	console.log(boxbottom);
-      	console.log(pipebottom);
-      	if(boxtop <= pipetop)
-      	{
-      		console.log("pipetop boyukdur");
-      	}
-      	if(boxbottom >= pipebottom)
-      		console.log("boxbottom boyukdur");
+
          //no! we touched the pipe
          playerDead();
          return;
@@ -456,7 +447,7 @@ function playerScore()
    score += 1;
 
    $("#companyYear").html('<h3 style="margin-top: 56px; font-size: 38px;">Stock price ' + Math.round(100*data[index])/100 + '$ for ' + month[myMonthIndex] + ' ' + myYear + ' </h3>');
-   console.log(index);
+
 
    myMonthIndex++;
    if(myMonthIndex == 12)
@@ -495,7 +486,7 @@ function initialiseData(){
    index = 0;
    var i = 0;
    jsonData = $.parseJSON(window.res);
-   console.log(jsonData);
+
    $.each(jsonData, function(val){
       d.setMonth(d.getMonth() + 1);
       dates.push(new Date().setMonth(d.getMonth).set);
@@ -503,9 +494,7 @@ function initialiseData(){
       i++;
 
    })
-     for(j = 0; j< dates.length; j++){
-      console.log(j+": "+dates[j]);
-   }
+
 }
 function updatePipes()
 {
