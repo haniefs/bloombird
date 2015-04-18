@@ -1,6 +1,6 @@
 # README #
 
-BloomBird is manipulated FlappyBird game which obstacles are generated depending on a stock price of a chosen company.
+BloomBird is manipulated FlappyBird game which obstacles at the game are generated depending on a stock price of a chosen company.
 
 ### What did we use? ###
 
@@ -12,4 +12,3 @@ BloomBird is manipulated FlappyBird game which obstacles are generated depending
 ### Version ###
 
 * Beta: 0.1
-
