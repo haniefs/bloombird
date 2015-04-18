@@ -74,6 +74,8 @@ function setCookie(cname,cvalue,exdays)
 function showSplash()
 {
    currentstate = states.SplashScreen;
+
+   $("#companyName").html('<h3 style="margin-top: 45px; font-size: 48px;">'+window.company+'</h3>');
    
    //set the defaults (again)
    velocity = 0;
