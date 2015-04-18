@@ -70,7 +70,7 @@ class Bloomberg {
 
 }
 
-$company = 'IBM US Equity';
+$company = $_POST['company'];
 $b = new Bloomberg($company);
 $b->json();
 ?>
