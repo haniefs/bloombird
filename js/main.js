@@ -23,6 +23,9 @@ var pipes = new Array();
 
 var replayclickable = false;
 
+var myMonthIndex = 0;
+var myYear = 2005;
+
 //sounds
 var volume = 30;
 var soundJump = new buzz.sound("assets/sounds/sfx_wing.ogg");
@@ -429,7 +432,10 @@ $("#replay").click(function() {
    //SWOOSH!
    soundSwoosh.stop();
    soundSwoosh.play();
-   initialiseData();
+   
+   myMonthIndex = 0;
+   myYear = 2005;
+
 
    //fade out the scoreboard
    $("#scoreboard").transition({ y: '-40px', opacity: 0}, 1000, 'ease', function() {
@@ -440,8 +446,7 @@ $("#replay").click(function() {
       showSplash();
    });
 });
-var myMonthIndex = 0;
-var myYear = 2005;
+
 function playerScore()
 {
    score += 1;
