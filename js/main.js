@@ -509,7 +509,11 @@ function initialiseData(){
 function updatePipes()
 {
 	if(index >= data.length)
-		initialiseData();
+	{
+      initialiseData();
+      myYear = 2005;
+      myMonthIndex = 0;
+   }
    result = data[index];
    index++;
    //Do any pipes need removal?
